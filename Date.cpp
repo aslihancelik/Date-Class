@@ -105,7 +105,21 @@ int Date::daysInMonth(int month) {
 }
 
 //print in three formats
-void Date::print(){}
+
+// Print functions
+void Date::print1() const { cout << month << "/" << day << "/" << year << endl; }
+
+void Date::print2() const {
+	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
+										 "July", "August", "September", "October", "November", "December" };
+	cout << monthNames[month] << " " << day << ", " << year << endl;
+}
+ 
+void Date::print3() const {
+	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
+										 "July", "August", "September", "October", "November", "December" };
+	cout << day << " " << monthNames[month] << " " << year << endl;
+}
 
 
 void Date::adjustDate(){

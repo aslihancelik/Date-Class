@@ -30,7 +30,10 @@ public:
 	int daysInMonth(int m);
 
 	//print in three formats
-	void print();
+
+	void print1() const;
+	void print2() const;
+	void print3() const;
 
 	void adjustDate();
 
