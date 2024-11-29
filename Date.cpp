@@ -50,7 +50,7 @@ void Date::setDate(int m, int d, int y) {
 
 	//Validate and set the day
 	// Validate the day (must be within valid range for the specified month and year)
-	if (day >= 1 && day <= daysInMonth(m)) {
+	if (d >= 1 && d <= daysInMonth(m)) {
 		// Set the day if valid
 		day = d;
 	}
