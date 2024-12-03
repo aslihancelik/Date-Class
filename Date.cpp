@@ -162,7 +162,6 @@ Date& Date::operator++() {
 }
 
 
-
 ////Postfix increment
 Date Date::operator++(int){
 	Date temp = *this;
