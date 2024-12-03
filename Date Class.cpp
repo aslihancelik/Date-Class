@@ -95,6 +95,16 @@ int main() {
     (--date1).print1(); // Should display 12/31/2024
     cout << endl;
 
+    // Pre-increment
+    cout << "Pre-increment from 12/31/2024: ";
+    (++date1).print1(); // Should display 1/1/2025
+    cout << endl;
+
+    // Pre-increment
+    cout << "Post-decrement from 1/1/2025: ";
+    (--date1).print1(); // Should display 12/31/2024
+    cout << endl;
+
     //// 13-14. Use cin and the >> operator to read and display a date.
     //cout << "Enter a date (MM/DD/YYYY): ";
     //cin >> date1;
