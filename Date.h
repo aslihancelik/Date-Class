@@ -51,8 +51,8 @@ public:
 	//Postfix decrement
 	Date operator--(int);
 
-	////Subtraction
-	//int operator-(const Date& other) const;
+	//Subtraction
+	int operator-(const Date& other) const;
 
 	////Stream operators
 

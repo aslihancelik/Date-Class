@@ -1,5 +1,6 @@
 #include "Date.h"
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 
@@ -184,23 +185,23 @@ Date Date::operator--(int) {
 	return temp;
 }
 
-////Subtraction
-//int Date::operator-(const Date& other) const {
-//	Date temp1 = *this, temp2 = other;
-//	int count = 0;
-//
-//	// Ensure temp1 is the earlier date
-//	if (temp1.year > temp2.year || (temp1.year == temp2.year && temp1.month > temp2.month) ||
-//		(temp1.year == temp2.year && temp1.month == temp2.month && temp1.day > temp2.day)) {
-//		swap(temp1, temp2);
-//	}
-//
-//	while (temp1.year != temp2.year || temp1.month != temp2.month || temp1.day != temp2.day) {
-//		++temp1;
-//		count++;
-//	}
-//	return count;
-//}
+//Subtraction
+int Date::operator-(const Date& other) const {
+	Date temp1 = *this, temp2 = other;
+	int count = 0;
+
+	// Ensure temp1 is the earlier date
+	if (temp1.year > temp2.year || (temp1.year == temp2.year && temp1.month > temp2.month) ||
+		(temp1.year == temp2.year && temp1.month == temp2.month && temp1.day > temp2.day)) {
+		swap(temp1, temp2);
+	}
+
+	while (temp1.year != temp2.year || temp1.month != temp2.month || temp1.day != temp2.day) {
+		++temp1;
+		count++;
+	}
+	return count;
+}
 
 
 //

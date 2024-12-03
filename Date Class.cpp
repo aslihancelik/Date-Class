@@ -42,15 +42,15 @@ int main() {
     date1.print1(); // Should display the default date (1/1/1930)
     cout << endl;
 
-    //// 7. Subtract two valid dates and verify the result.
-    //date1.setDate(4, 10, 2014); // Set first date
-    //date2.setDate(4, 18, 2014); // Set second date
-    //cout << "Difference between 4/10/2014 and 4/18/2014: " << (date2 - date1) << " days" << endl;
+    // 7. Subtract two valid dates and verify the result.
+    date1.setDate(4, 10, 2014); // Set first date
+    date2.setDate(4, 18, 2014); // Set second date
+    cout << "Difference between 4/10/2014 and 4/18/2014: " << (date2 - date1) << " days" << endl;
 
-    //// 8. Subtract two other valid dates and verify the result.
-    //date1.setDate(11, 10, 2003);
-    //date2.setDate(2, 2, 2006);
-    //cout << "Difference between 2/2/2006 and 11/10/2003: " << (date2 - date1) << " days" << endl;
+    // 8. Subtract two other valid dates and verify the result.
+    date1.setDate(11, 10, 2003);
+    date2.setDate(2, 2, 2006);
+    cout << "Difference between 2/2/2006 and 11/10/2003: " << (date2 - date1) << " days" << endl;
 
     // 9-12. Test pre- and post-increment/decrement operators.
     date1.setDate(2, 29, 2008); // Leap year
