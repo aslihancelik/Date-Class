@@ -143,7 +143,7 @@ void Date::adjustDate(){
 	}
 	while (day < 1) {
 		month--;
-		if (month < 1) {
+		if (month < 1) {  
 			month = 12;
 			year--;
 		}
@@ -158,6 +158,11 @@ void Date::adjustDate(){
 Date& Date::operator++() {
 	day++;
 	adjustDate();
+	//if day
+
+
+
+
 	return *this;
 }
 
@@ -186,42 +191,42 @@ Date Date::operator--(int) {
 }
 
 ////Subtraction
-int Date::operator-(const Date& other) const {
-	Date temp1 = *this, temp2 = other;
-	int count = 0;
-
-	// Ensure temp1 is the earlier date
-	if (temp1.year > temp2.year || (temp1.year == temp2.year && temp1.month > temp2.month) ||
-		(temp1.year == temp2.year && temp1.month == temp2.month && temp1.day > temp2.day)) {
-		swap(temp1, temp2);
-	}
-
-	while (temp1.year != temp2.year || temp1.month != temp2.month || temp1.day != temp2.day) {
-		++temp1;
-		count++;
-	}
-	return count;
-}
+//int Date::operator-(const Date& other) const {
+//	Date temp1 = *this, temp2 = other;
+//	int count = 0;
+//
+//	// Ensure temp1 is the earlier date
+//	if (temp1.year > temp2.year || (temp1.year == temp2.year && temp1.month > temp2.month) ||
+//		(temp1.year == temp2.year && temp1.month == temp2.month && temp1.day > temp2.day)) {
+//		swap(temp1, temp2);
+//	}
+//
+//	while (temp1.year != temp2.year || temp1.month != temp2.month || temp1.day != temp2.day) {
+//		++temp1;
+//		count++;
+//	}
+//	return count;
+//}
 
 
 //
 ////Stream operators
 
 //// Stream insertion operator
-ostream& operator<<(ostream& os, const Date& date) {
-	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
-										 "July", "August", "September", "October", "November", "December" };
-	os << monthNames[date.month] << " " << date.day << ", " << date.year;
-	return os;
-}
+//ostream& operator<<(ostream& os, const Date& date) {
+//	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
+//										 "July", "August", "September", "October", "November", "December" };
+//	os << monthNames[date.month] << " " << date.day << ", " << date.year;
+//	return os;
+//}
 
 
 // Stream extraction operator
 
-istream& operator>>(istream& is, Date& date) {
-	char separator;
-	cout << "Enter date in MM/DD/YYYY format: ";
-	is >> date.month >> separator >> date.day >> separator >> date.year;
-	date.adjustDate();
-	return is;
-}
+//istream& operator>>(istream& is, Date& date) {
+//	char separator;
+//	cout << "Enter date in MM/DD/YYYY format: ";
+//	is >> date.month >> separator >> date.day >> separator >> date.year;
+//	date.adjustDate();
+//	return is;
+//}

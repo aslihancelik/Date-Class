@@ -42,53 +42,63 @@ int main() {
     date1.print1(); // Should display the default date (1/1/1930)
     cout << endl;
 
-    // 7. Subtract two valid dates and verify the result.
-    date1.setDate(4, 10, 2014); // Set first date
-    date2.setDate(4, 18, 2014); // Set second date
-    cout << "Difference between 4/10/2014 and 4/18/2014: " << (date2 - date1) << " days" << endl;
+    //// 7. Subtract two valid dates and verify the result.
+    //date1.setDate(4, 10, 2014); // Set first date
+    //date2.setDate(4, 18, 2014); // Set second date
+    //cout << "Difference between 4/10/2014 and 4/18/2014: " << (date2 - date1) << " days" << endl;
 
-    // 8. Subtract two other valid dates and verify the result.
-    date1.setDate(11, 10, 2003);
-    date2.setDate(2, 2, 2006);
-    cout << "Difference between 2/2/2006 and 11/10/2003: " << (date2 - date1) << " days" << endl;
+    //// 8. Subtract two other valid dates and verify the result.
+    //date1.setDate(11, 10, 2003);
+    //date2.setDate(2, 2, 2006);
+    //cout << "Difference between 2/2/2006 and 11/10/2003: " << (date2 - date1) << " days" << endl;
 
     // 9-12. Test pre- and post-increment/decrement operators.
     date1.setDate(2, 29, 2008); // Leap year
-    --date1; // Pre-decrement
+    // Pre-decrement
     cout << "Pre-decrement from 2/29/2008: ";
-    date1.print1(); // Should display 1/31/2008
+    (--date1).print1(); // Should display 1/31/2008
     cout << endl;
 
-    ++date1; // Pre-increment
+    // Pre-increment
     cout << "Pre-increment back to 2/29/2008: ";
-    date1.print1(); // Should display 2/29/2008
+    (++date1).print1(); // Should display 2/29/2008
     cout << endl;
 
-    date1--; // Post-decrement
+    // Post-decrement
     cout << "Post-decrement from 2/29/2008: ";
-    date1.print1(); // Should display 1/31/2008
+    date1--.print1(); // Should display 1/31/2008
     cout << endl;
 
-    date1++; // Post-increment
+    // Post-increment
     cout << "Post-increment back to 2/29/2008: ";
-    date1.print1(); // Should display 2/29/2008
+    date1++.print1(); // Should display 2/29/2008
+    cout << endl;
+
+    // Pre-increment
+    cout << "Pre-increment to 3/1/2008: ";
+    (++date1).print1(); // Should display 3/1/2008
+    cout << endl;
+
+    // Pre-decrement
+    cout << "Pre-decrement from 3/1/2008: ";
+    (--date1).print1(); // Should display 2/29/2008
     cout << endl;
 
     date1.setDate(12, 31, 2024);
-    date1++; // Post-increment to next year
+    // Post-increment to next year
     cout << "Post-increment from 12/31/2024: ";
-    date1.print1(); // Should display 1/1/2025
+    date1++.print1(); // Should display 1/1/2025
     cout << endl;
 
-    --date1; // Pre-decrement back to previous year
+    // Pre-decrement back to previous year
     cout << "Pre-decrement back to 12/31/2024: ";
-    date1.print1(); // Should display 12/31/2024
+    (--date1).print1(); // Should display 12/31/2024
     cout << endl;
 
-    // 13-14. Use cin and the >> operator to read and display a date.
-    cout << "Enter a date (MM/DD/YYYY): ";
-    cin >> date1;
-    cout << "You entered: " << date1 << endl;
+    //// 13-14. Use cin and the >> operator to read and display a date.
+    //cout << "Enter a date (MM/DD/YYYY): ";
+    //cin >> date1;
+    //cout << "You entered: " << date1 << endl;
 
     return 0;
 }

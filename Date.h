@@ -51,13 +51,13 @@ public:
 	//Postfix decrement
 	Date operator--(int);
 
-	//Subtraction
-	int operator-(const Date& other) const;
+	////Subtraction
+	//int operator-(const Date& other) const;
 
-	//Stream operators
+	////Stream operators
 
-	friend ostream& operator<<(ostream& os, const Date& date);
-	friend istream& operator>>(istream& is, Date& date);
+	//friend ostream& operator<<(ostream& os, const Date& date);
+	//friend istream& operator>>(istream& is, Date& date);
 
 
 
