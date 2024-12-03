@@ -158,11 +158,6 @@ void Date::adjustDate(){
 Date& Date::operator++() {
 	day++;
 	adjustDate();
-	//if day
-
-
-
-
 	return *this;
 }
 
