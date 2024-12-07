@@ -10,6 +10,9 @@
 // - Overloading stream insertion (`<<`) and extraction (`>>`) operators for input and output.
 // This class ensures that dates are validated and adjusted correctly, provides different date 
 // representations, and handles basic date arithmetic.
+//
+//
+// Programmer: Aslihan Aria Celik
 
 #ifndef DATE_H 
 #define DATE_H
