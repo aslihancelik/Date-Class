@@ -224,7 +224,6 @@ istream& operator>>(istream& is, Date& date) {
 	char separator;
 	int m, d, y ;
 	cout << "Enter date in MM/DD/YYYY format: ";
-	//is >> date.month >> separator >> date.day >> separator >> date.year;
 
 	is >> m >> separator >> d >> separator >> y;
 
