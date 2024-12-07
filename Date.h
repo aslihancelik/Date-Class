@@ -1,4 +1,9 @@
-#pragma once
+#ifndef DATE_H 
+#define DATE_H
+
+#include <iostream>
+using namespace std;
+
 class Date
 {
 private:
@@ -14,18 +19,18 @@ public:
 
 	// A function to set the date which takes month, day, and year as parameters.
 	void setDate(int m, int d, int y);
-	
-    //Getter functions that return the month, day, and year individually as integers.
+
+	//Getter functions that return the month, day, and year individually as integers.
 	int getDay() { return day; }
 	int getMonth() { return month; }
 	int getYear() { return year; }
-	
-    //A function which takes a year and returns true if the year is a leap year.
-	
+
+	//A function which takes a year and returns true if the year is a leap year.
+
 	bool isLeapYear(int y);
 
 
-    //A function which takes a month and returns the number of days in that month
+	//A function which takes a month and returns the number of days in that month
 
 	int daysInMonth(int m);
 
@@ -56,11 +61,11 @@ public:
 
 	////Stream operators
 
-	friend std::ostream& operator<<(std::ostream& os, const Date& date);
+	// Friend function to overload the << operator
+	friend ostream& operator<<(ostream& os, const Date& date);
+
 	//friend istream& operator>>(istream& is, Date& date);
-
-
-
-
+	friend istream& operator>>(istream& is, Date& date);
 };
 
+#endif // DATE_H

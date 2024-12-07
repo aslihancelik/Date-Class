@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+
 using namespace std;
 
 
@@ -209,7 +210,7 @@ int Date::operator-(const Date& other) const {
 //Stream operators
 
 // Stream insertion operator
-std::ostream& operator<<(std::ostream& os, const Date& date) {
+ostream& operator<<(ostream& os, const Date& date) {
 	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
 										 "July", "August", "September", "October", "November", "December" };
 	os << monthNames[date.month] << " " << date.day << ", " << date.year;
@@ -219,10 +220,10 @@ std::ostream& operator<<(std::ostream& os, const Date& date) {
 
 // Stream extraction operator
 
-//istream& operator>>(istream& is, Date& date) {
-//	char separator;
-//	cout << "Enter date in MM/DD/YYYY format: ";
-//	is >> date.month >> separator >> date.day >> separator >> date.year;
-//	date.adjustDate();
-//	return is;
-//}
+istream& operator>>(istream& is, Date& date) {
+	char separator;
+	cout << "Enter date in MM/DD/YYYY format: ";
+	is >> date.month >> separator >> date.day >> separator >> date.year;
+	date.adjustDate();
+	return is;
+}
