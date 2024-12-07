@@ -1,6 +1,7 @@
 #include "Date.h"
 #include <iostream>
 #include <algorithm>
+#include <string>
 using namespace std;
 
 
@@ -204,16 +205,16 @@ int Date::operator-(const Date& other) const {
 }
 
 
-//
-////Stream operators
 
-//// Stream insertion operator
-//ostream& operator<<(ostream& os, const Date& date) {
-//	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
-//										 "July", "August", "September", "October", "November", "December" };
-//	os << monthNames[date.month] << " " << date.day << ", " << date.year;
-//	return os;
-//}
+//Stream operators
+
+// Stream insertion operator
+std::ostream& operator<<(std::ostream& os, const Date& date) {
+	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
+										 "July", "August", "September", "October", "November", "December" };
+	os << monthNames[date.month] << " " << date.day << ", " << date.year;
+	return os;
+}
 
 
 // Stream extraction operator

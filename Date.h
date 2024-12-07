@@ -56,7 +56,7 @@ public:
 
 	////Stream operators
 
-	//friend ostream& operator<<(ostream& os, const Date& date);
+	friend std::ostream& operator<<(std::ostream& os, const Date& date);
 	//friend istream& operator>>(istream& is, Date& date);
 
 

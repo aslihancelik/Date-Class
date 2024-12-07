@@ -108,7 +108,10 @@ int main() {
     //// 13-14. Use cin and the >> operator to read and display a date.
     //cout << "Enter a date (MM/DD/YYYY): ";
     //cin >> date1;
-    //cout << "You entered: " << date1 << endl;
+
+    Date date{ 1, 12, 2024 }; // Example date: December 1, 2024 cout << date;
+    //cout << "You entered: " << date << endl;
+    cout << date;
 
     return 0;
 }
