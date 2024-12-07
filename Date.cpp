@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -22,11 +23,11 @@ void Date::setDate(int m, int d, int y) {
 		year = y;
 	}
 	else {
-		cout << "Year invalid,setting the date to 1/1/1930 " << endl;
+		cout << "Date invalid,setting the date to 1/1/1930 " << endl;
 		//Default values
 		month = 1;
 		day = 1;
-		year = 1900;
+		year = 1930;
 		return; // Exit the function
 
 	}
@@ -45,7 +46,7 @@ void Date::setDate(int m, int d, int y) {
 		//Default values
 		month = 1;
 		day = 1;
-		year = 1900;
+		year = 1930;
 		return; // Exit the function
 	}
 
@@ -59,14 +60,13 @@ void Date::setDate(int m, int d, int y) {
 	}
 	else {
 		// If day is invalid, print an error message and set default values
-		cout << "Date invalid, setting to 1/1/1900 " << endl;
+		cout << "Date invalid, setting to 1/1/1930 " << endl;
 		//Default values
 		month = 1;
 		day = 1;
-		year = 1900;
+		year = 1930;
 		return; // Exit the function
 	}
-
 }
 
 //A function which takes a year and returns true if the year is a leap year.
@@ -222,8 +222,12 @@ ostream& operator<<(ostream& os, const Date& date) {
 
 istream& operator>>(istream& is, Date& date) {
 	char separator;
+	int m, d, y ;
 	cout << "Enter date in MM/DD/YYYY format: ";
-	is >> date.month >> separator >> date.day >> separator >> date.year;
-	date.adjustDate();
+	//is >> date.month >> separator >> date.day >> separator >> date.year;
+
+	is >> m >> separator >> d >> separator >> y;
+
+	date.setDate(m, d, y);
 	return is;
 }
