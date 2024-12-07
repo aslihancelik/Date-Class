@@ -1,3 +1,17 @@
+// Date.cpp : This file contains the implementation of the Date class member functions and operator overloads. 
+// The Date class provides functionality for: 
+// - Setting and validating dates with `setDate`. 
+// - Checking for leap years with `isLeapYear`. 
+// - Determining the number of days in a month with `daysInMonth`. 
+// - Printing dates in various formats with `print1`, `print2`, and `print3`. 
+// - Adjusting dates with `adjustDate`. 
+// - Overloading operators for date arithmetic, including pre- and post-increment (`++`), 
+//   pre- and post-decrement (`--`), and subtraction (`-`). 
+// - Overloading stream insertion (`<<`) and extraction (`>>`) operators for input and output. 
+// This class ensures that dates are validated and adjusted correctly, provides different date representations, 
+// and handles basic date arithmetic.
+
+
 #include "Date.h"
 #include <iostream>
 #include <algorithm>
@@ -7,6 +21,8 @@
 using namespace std;
 
 
+const string Date::monthNames[] = { "", "January", "February", "March", "April", "May", "June",
+										 "July", "August", "September", "October", "November", "December" };
 
 //constructor
 
@@ -107,20 +123,15 @@ int Date::daysInMonth(int month) {
 
 }
 
-//print in three formats
-
 // Print functions
+// print in three formats
 void Date::print1() const { cout << month << "/" << day << "/" << year << endl; }
 
 void Date::print2() const {
-	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
-										 "July", "August", "September", "October", "November", "December" };
 	cout << monthNames[month] << " " << day << ", " << year << endl;
 }
  
 void Date::print3() const {
-	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
-										 "July", "August", "September", "October", "November", "December" };
 	cout << day << " " << monthNames[month] << " " << year << endl;
 }
 
@@ -211,9 +222,7 @@ int Date::operator-(const Date& other) const {
 
 // Stream insertion operator
 ostream& operator<<(ostream& os, const Date& date) {
-	static const string monthNames[] = { "", "January", "February", "March", "April", "May", "June",
-										 "July", "August", "September", "October", "November", "December" };
-	os << monthNames[date.month] << " " << date.day << ", " << date.year;
+	os << Date::monthNames[date.month] << " " << date.day << ", " << date.year;
 	return os;
 }
 

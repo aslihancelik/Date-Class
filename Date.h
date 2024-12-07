@@ -1,3 +1,16 @@
+// Date.h : This file contains the definition of the Date class. 
+// The Date class provides functionality for:
+// - Setting and validating dates with `setDate`.
+// - Checking for leap years with `isLeapYear`.
+// - Determining the number of days in a month with `daysInMonth`.
+// - Printing dates in various formats with `print1`, `print2`, and `print3`.
+// - Adjusting dates with `adjustDate`.
+// - Overloading operators for date arithmetic, including pre- and post-increment (`++`), 
+//   pre- and post-decrement (`--`), and subtraction (`-`).
+// - Overloading stream insertion (`<<`) and extraction (`>>`) operators for input and output.
+// This class ensures that dates are validated and adjusted correctly, provides different date 
+// representations, and handles basic date arithmetic.
+
 #ifndef DATE_H 
 #define DATE_H
 
@@ -16,7 +29,6 @@ public:
 
 	Date(int = 1, int = 1, int = 1930);
 
-
 	// A function to set the date which takes month, day, and year as parameters.
 	void setDate(int m, int d, int y);
 
@@ -29,10 +41,12 @@ public:
 
 	bool isLeapYear(int y);
 
-
 	//A function which takes a month and returns the number of days in that month
 
 	int daysInMonth(int m);
+
+	//name of the months
+	static const string monthNames[13];
 
 	//print in three formats
 
@@ -64,8 +78,9 @@ public:
 	// Friend function to overload the << operator
 	friend ostream& operator<<(ostream& os, const Date& date);
 
-	//friend istream& operator>>(istream& is, Date& date);
+	//friend function to overload the >> operator
 	friend istream& operator>>(istream& is, Date& date);
+
 };
 
 #endif // DATE_H

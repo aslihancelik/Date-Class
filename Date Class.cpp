@@ -1,8 +1,14 @@
 // Date Class.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// This program demonstrates the functionality of the Date class, including creating date objects,
+// testing constructors, setting dates, verifying invalid dates, and testing date arithmetic and 
+// increment/decrement operators.It also showcases the use of overloaded stream extraction and 
+// insertion operators for input and output.
 //
+//
+// Programmer: Aslihan Aria Celik
 
 #include <iostream>
-#include "Date.h" // Include your Date class header file
+#include "Date.h" 
 using namespace std;
 
 int main() {
@@ -50,7 +56,7 @@ int main() {
     // 8. Subtract two other valid dates and verify the result.
     date1.setDate(11, 10, 2003);
     date2.setDate(2, 2, 2006);
-    cout << "Difference between 2/2/2006 and 11/10/2003: " << (date2 - date1) << " days" << endl;
+    cout << "Difference between 2/2/2006 and 11/10/2003: " << (date2 - date1) << " days" << endl << endl;
 
     // 9-12. Test pre- and post-increment/decrement operators.
     date1.setDate(2, 29, 2008); // Leap year
@@ -84,35 +90,50 @@ int main() {
     (--date1).print1(); // Should display 2/29/2008
     cout << endl;
 
+    //Question 12:
     date1.setDate(12, 31, 2024);
     // Post-increment to next year
-    cout << "Post-increment from 12/31/2024: ";
-    date1++.print1(); // Should display 1/1/2025
+    cout << "Print post-incrementing from 12/31/2024: ";
+    date1++.print1(); // Should display 12/31/2025
+    cout << "Date is set to: ";
+    date1.print1(); // Should display 1/1/2025
     cout << endl;
 
-    // Pre-decrement back to previous year
-    cout << "Pre-decrement back to 12/31/2024: ";
-    (--date1).print1(); // Should display 12/31/2024
+    //Question 13
+    // Post-decrement back to previous year
+    cout << "Print post-decrementing back to 12/31/2024: ";
+    date1--.print1(); // Should display 1/1/2024
+    cout << "Date is set to: ";
+    date1.print1(); // Should display 12/31/2024
     cout << endl;
 
+    //Question 14
     // Pre-increment
-    cout << "Pre-increment from 12/31/2024: ";
+    cout << "Print pre-incrementing from 12/31/2024: ";
     (++date1).print1(); // Should display 1/1/2025
+    cout << "Date is set to: ";
+    date1.print1(); // Should display 1/1/2025
     cout << endl;
 
-    // Pre-increment
-    cout << "Post-decrement from 1/1/2025: ";
+    // Pre-decrement
+    cout << "Print pre-decrementing from 1/1/2025: ";
     (--date1).print1(); // Should display 12/31/2024
+    cout << "Date is set to: ";
+    date1.print1(); // Should display 12/31/2025
     cout << endl;
 
-    //// 13-14. Use cin and the >> operator to read and display a date.
+    //Question 15:
+    // Use cin and the >> operator to read and display a date.
     Date inDate;
     cin >> inDate;
+
+    //Question 16:
+
     cout << "The date you entered is set to: " << inDate << endl;
 
     //testing the overloaded stream insertion operator
     cout << endl;
-    Date today(12, 7, 2024); // December 7, 2024 
+    Date today(4, 18, 2018); // December 7, 2024 
     cout << "Today's date is: " << today << endl;
 
     return 0;
